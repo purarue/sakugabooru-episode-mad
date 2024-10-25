@@ -9,7 +9,7 @@ Requires `python3.7+`
 To install with pip, run:
 
 ```
-pip install git+https://github.com/seanbreckenridge/sakugabooru-episode-mad
+pip install git+https://github.com/purarue/sakugabooru-episode-mad
 ```
 
 ## Usage
