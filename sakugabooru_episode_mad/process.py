@@ -4,7 +4,7 @@ import json
 import itertools
 from pathlib import Path
 from functools import cached_property
-from typing import List, Dict, Any
+from typing import Any
 from dataclasses import dataclass
 
 import click
@@ -29,14 +29,14 @@ class Item:
     media_path: Path
 
     @cached_property
-    def data(self) -> Dict[str, Any]:
+    def data(self) -> dict[str, Any]:
         with self.data_path.open("r") as f:
             return json.load(f)  # type: ignore[no-any-return]
 
     @staticmethod
-    def parse_folder(folder: Path) -> List[Item]:
+    def parse_folder(folder: Path) -> list[Item]:
         """Process a folder."""
-        items: List[Item] = []
+        items: list[Item] = []
         all_files = list(folder.iterdir())
         for file in (f for f in all_files if f.is_file() and f.suffix == ".json"):
             # find filename attached to this with same stem
@@ -53,11 +53,11 @@ class Item:
         return items
 
     @staticmethod
-    def sort_by(data: List[Item], key: str, reverse: bool) -> List[Item]:
+    def sort_by(data: list[Item], key: str, reverse: bool) -> list[Item]:
         return sorted(data, key=lambda item: item.data[key], reverse=reverse)  # type: ignore[no-any-return]
 
     @staticmethod
-    def group_by(data: List[Item], key: str) -> Dict[int, List[Item]]:
+    def group_by(data: list[Item], key: str) -> dict[int, list[Item]]:
         assert key in {"source"}
         groups = {}
 

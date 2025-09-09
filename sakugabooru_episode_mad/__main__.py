@@ -1,7 +1,7 @@
 import json
 import tempfile
 import subprocess
-from typing import Optional, List, Dict
+from typing import Optional
 from pathlib import Path
 
 import click
@@ -122,7 +122,7 @@ def _list(
         return
 
     # merge videos
-    grouped_items: Dict[str, List[Item]]
+    grouped_items: dict[str, list[Item]]
     if group_by is None:
         grouped_items = {"all": items}
     else:
@@ -157,7 +157,7 @@ def _list(
         with tempfile.NamedTemporaryFile() as f:
             # create input file for ffmpeg
             for item in items:
-                f.write(f"file '{item.media_path.absolute()}'\n".encode("utf-8"))
+                f.write(f"file '{item.media_path.absolute()}'\n".encode())
             f.flush()
 
             click.echo(f"Merging {output_path}", err=True)

@@ -1,7 +1,7 @@
 import time
 import json
 from urllib.parse import urlparse
-from typing import Any, Optional, Dict
+from typing import Any, Optional
 from pathlib import Path
 
 import click
@@ -26,7 +26,7 @@ def request_json(url: str) -> Any:
 
 
 def download_post(
-    post: Dict[str, Any],
+    post: dict[str, Any],
     skip_downloading_media: bool,
     output_folder: str,
     score_over: Optional[int],

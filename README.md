@@ -4,7 +4,7 @@ Downloads all [sakugabooru](https://www.sakugabooru.com/) posts for a particular
 
 ## Installation
 
-Requires `python3.9+`
+Requires `python3.10+`
 
 To install with pip, run:
 
