@@ -1,7 +1,6 @@
 import json
 import tempfile
 import subprocess
-from typing import Optional
 from pathlib import Path
 
 import click

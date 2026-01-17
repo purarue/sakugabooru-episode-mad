@@ -1,7 +1,7 @@
 import time
 import json
 from urllib.parse import urlparse
-from typing import Any, Optional
+from typing import Any
 from pathlib import Path
 
 import click
