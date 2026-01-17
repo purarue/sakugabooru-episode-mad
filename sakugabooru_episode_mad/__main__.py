@@ -43,11 +43,11 @@ def main() -> None:
 )
 @click.argument("TAG", required=True, type=str)
 def download(
-    output_folder: Optional[str],
+    output_folder: str | None,
     tag: str,
     download: bool,
     only_animated: bool,
-    skip_score_under: Optional[int],
+    skip_score_under: int | None,
 ) -> None:
     """
     Download posts from Sakugabooru
@@ -91,8 +91,8 @@ def _list(
     folder: Path,
     output_type: str,
     reverse: bool,
-    sort_by: Optional[str],
-    group_by: Optional[str],
+    sort_by: str | None,
+    group_by: str | None,
 ) -> None:
     """
     Process/List downloaded posts

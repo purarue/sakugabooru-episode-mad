@@ -29,7 +29,7 @@ def download_post(
     post: dict[str, Any],
     skip_downloading_media: bool,
     output_folder: str,
-    score_over: Optional[int],
+    score_over: int | None,
 ) -> None:
     file_url = post["file_url"]
     file_extension = urlparse(file_url).path.split(".")[-1]
@@ -67,7 +67,7 @@ def download_bulk(
     skip_downloading_media: bool,
     output_folder: str,
     only_animated: bool,
-    score_over: Optional[int],
+    score_over: int | None,
 ) -> None:
     if only_animated:
         tags += "+animated"
